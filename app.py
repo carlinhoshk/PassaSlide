@@ -30,6 +30,7 @@ def down():
     pyautogui.press('down')
     pyautogui.press('down')
     pyautogui.press('down')
+    
     #pyautogui.scroll(-100)
     
     return render_template('index.html')

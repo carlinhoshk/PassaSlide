@@ -2,46 +2,55 @@
   <head>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-      .arrows {
+      .buttons {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
         background-color: black;
       }
-      .arrow {
-        font-size: 4em;
-        text-decoration: none;
-        color: red;
+      .button {
+        display: inline-block;
+        width: 0; 
+        height: 0; 
         margin: 0 1em;
         cursor: pointer;
+        border-left: 1em solid transparent;
+        border-right: 1em solid transparent;
+        text-align: center;
+        position: relative;
       }
-      .arrow.down {
-        color: blue;
+      .button.up {
+        border-bottom: 2em solid red;
+        top: -1.5em;
+        left: 4em;
+      }
+      .button.down {
+        border-top: 2em solid blue;
+        bottom: -1.5em;
+        
       }
     </style>
   </head>
   <body>
-    <div class="arrows">
-      <a class="arrow" id="arrow-up" href="#">&uarr;</a>
-      <a class="arrow" id="arrow-down" href="#" class="down">&darr;</a>
+    <div class="buttons">
+      <div id="button-up" class="button up"></div>
+      <div id="button-down" class="button down"></div>
     </div>
     <script>
-      $("#arrow-up").click(function(e) {
-        e.preventDefault();
+      $("#button-up").click(function(e) {
         $.ajax({
           url: "/up",
           success: function(data) {
-            console.log("Seta para cima ativada");
+            console.log("Botão para cima ativado");
           }
         });
       });
-      $("#arrow-down").click(function(e) {
-        e.preventDefault();
+      $("#button-down").click(function(e) {
         $.ajax({
           url: "/down",
           success: function(data) {
-            console.log("Seta para baixo ativada");
+            console.log("Botão para baixo ativado");
           }
         });
       });
