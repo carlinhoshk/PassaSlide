@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      .arrows {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: black;
+      }
+      .arrow {
+        font-size: 4em;
+        text-decoration: none;
+        color: red;
+        margin: 0 1em;
+        cursor: pointer;
+      }
+      .arrow.down {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="arrows">
+      <a class="arrow" id="arrow-up" href="#">&uarr;</a>
+      <a class="arrow" id="arrow-down" href="#" class="down">&darr;</a>
+    </div>
+    <script>
+      $("#arrow-up").click(function(e) {
+        e.preventDefault();
+        $.ajax({
+          url: "/up",
+          success: function(data) {
+            console.log("Seta para cima ativada");
+          }
+        });
+      });
+      $("#arrow-down").click(function(e) {
+        e.preventDefault();
+        $.ajax({
+          url: "/down",
+          success: function(data) {
+            console.log("Seta para baixo ativada");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
