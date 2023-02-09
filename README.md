@@ -1,6 +1,6 @@
 # PassaSlide
 
-## Passa Slide é um aplicativo python para simular um controle bluetooth.
+## Passa Slide é um aplicativo python para simular um controle usb de passa slides.
 
 #Tecnologias Utilizadas
 - Python
